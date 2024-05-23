@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<draw:Model xmlns:xmi="http://www.omg.org/XMI" xmlns:draw="http://www.example.org/draw" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0">
+  <commands xsi:type="draw:MoveTo">
+    <position x="5" y="10"/>
+  </commands>
+  <commands xsi:type="draw:LineTo">
+    <point x="10" y="10"/>
+  </commands>
+  <commands xsi:type="draw:LineTo">
+    <point x="20" y="20"/>
+  </commands>
+  <commands xsi:type="draw:MoveBy">
+    <vector x="5" y="-7"/>
+  </commands>
+  <commands xsi:type="draw:Circle" radius="10"/>
+  <commands xsi:type="draw:LineTo">
+    <point x="10" y="10"/>
+  </commands>
+</draw:Model>
