@@ -1,0 +1,6 @@
+Bool: assignments*=Assignment expression=Or;
+Assignment: variable=ID '=' expression=Or';';
+Or: op=And ('or' op=And)*;
+And: op=Not ('and' op=Not)*;
+Not: _not?='not' op=Operand;
+Operand: op=BOOL | op=ID | ( '(' op=Or ')' );
