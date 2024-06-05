@@ -109,7 +109,7 @@ def validate_default_value(attribute):
     print(f"Validating validate_default_value for {attribute}")
     if attribute.default_value is not None:
         if isinstance(attribute.eType, EEnum):
-            if attribute.default_value not in attribute.eType.literals:
+            if attribute.default_value not in [literal.name for literal in attribute.eType.eLiterals]:
                 return Diagnostic('invalid_default_value', Level.ERROR, {attribute},
                                   f'Default value {attribute.default_value} is not a valid literal of {attribute.eType.name}')
         elif isinstance(attribute.eType, EDataType):
@@ -122,6 +122,7 @@ def validate_default_value(attribute):
                 return Diagnostic('invalid_default_value', Level.ERROR, {attribute},
                                   f'Default value {attribute.default_value} is not of type {attribute.eType.name}')
     return OK_diagnostic
+
 
 # Ecore validator, it binds rules with specific EObjects
 class EcoreValidator(object):
